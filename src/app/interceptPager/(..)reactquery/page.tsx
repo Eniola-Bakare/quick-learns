@@ -13,7 +13,7 @@ export default function ReactQuery() {
   if (isError) return <h3 className=" italic">ERROR: {error.message}</h3>;
   return (
     <>
-      <p> ReactQuery !</p>
+      ReactQuery, intercepted pageeeeeeeeeeeeeeeeeeee !
       <div>
         {data.map((each: any) => (
           <h2 key={each.id}>
