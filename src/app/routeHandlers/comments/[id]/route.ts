@@ -1,10 +1,14 @@
 import { headers } from "next/headers";
 import { comments } from "../data";
+import { redirect } from "next/navigation";
 
 export async function GET(
   request: Request,
   { params }: { params: { id: string } }
 ) {
+  if (parseInt(params.id) > comments.length) {
+    return redirect("/routeHandlers/comments");
+  }
   const comment = comments.find(
     (comment) => comment.id === parseInt(params.id)
   );
